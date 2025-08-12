@@ -7,3 +7,8 @@ function solution(n) {
     }
     return answer;
 }
+
+// 올림을 쓰면 더 간편
+function solution(n) {
+    return Math.ceil(n / 7)
+}
