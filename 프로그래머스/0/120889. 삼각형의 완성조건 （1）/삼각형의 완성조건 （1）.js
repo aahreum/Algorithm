@@ -1,6 +1,7 @@
 function solution(sides) {
-    let sortSides = sides.sort((a, b) => a - b);
-    if (sortSides[2] < sortSides[0] + sortSides[1]) {
+    // sort는 원본 배열을 변경함 만약 원본 배열을 변경하고 싶지 않다면 얕은 복사로 배열을 복사해야함
+    sides.sort((a, b) => a - b);
+    if (sides[0] + sides[1] > sides[2]) {
         return 1;
     } else {
         return 2;
