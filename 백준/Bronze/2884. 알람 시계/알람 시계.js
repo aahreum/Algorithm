@@ -10,8 +10,8 @@ function solution(input) {
     time += 24 * 60
   }
 
-  const newHour = Math.abs(Math.floor(time / 60) % 24)
-  const newMinute = Math.abs(time % 60)
+  const newHour = Math.floor(time / 60) % 24
+  const newMinute = time % 60
 
   console.log(newHour, newMinute)
 }
