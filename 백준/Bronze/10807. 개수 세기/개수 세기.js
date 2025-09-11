@@ -2,10 +2,11 @@ const fs = require('fs')
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
 
 function solution(input) {
-  let [_, arr, num] = input
-  arr = arr.split(' ')
-
-  console.log(arr.filter((n) => n === num).length)
+  const targetArray = input[1].split(' ').map(Number);
+  const targetNumber = Number(input[2]);
+  const count = targetArray.filter(num => num === targetNumber).length;
+  
+  console.log(count);
 }
 
-solution(input)
+solution(input);
