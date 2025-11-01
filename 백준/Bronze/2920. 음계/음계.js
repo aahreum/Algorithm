@@ -1,24 +1,11 @@
 const fs = require("fs");
-const input = fs.readFileSync("/dev/stdin").toString();
+const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ").map(Number);
 
-function solution(input) {
-  const terms = input;
-  const ascending = input
-    .split(" ")
-    .sort((a, b) => a - b)
-    .join(" ");
-  const descending = input
-    .split(" ")
-    .sort((a, b) => b - a)
-    .join(" ");
+function solution(arr) {
+  if (arr.every((v, i) => v === i + 1)) return "ascending";
+  if (arr.every((v, i) => v === 8 - i)) return "descending";
 
-  if (terms === ascending) {
-    return "ascending";
-  } else if (terms === descending) {
-    return "descending";
-  } else {
-    return "mixed";
-  }
+  return "mixed";
 }
 
 console.log(solution(input));
