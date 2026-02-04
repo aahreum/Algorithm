@@ -1,18 +1,8 @@
 function solution(participant, completion) {
-    const obj = {};
-    let answer = '';
+    const map = {};
     
-    participant.forEach((item) => {
-        obj[item] = (obj[item] ?? 0) + 1;
-    })
+    participant.forEach((p) => map[p] = (map[p] ?? 0) + 1);
+    completion.forEach((c) => map[c]--);
     
-    completion.forEach((item) => {
-        obj[item] += 1;
-    })
-    
-    for (key in obj) {
-        if (obj[key] % 2 !== 0) {
-            return key;
-        }
-    }
+    return Object.keys(map).find((key) => map[key] !== 0);
 }
