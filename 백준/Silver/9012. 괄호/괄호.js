@@ -12,7 +12,7 @@ function solution(input) {
         stack.push(ch);
       } else {
         if (stack.length === 0) {
-          stack.push(")");
+          stack.push(ch);
           break;
         }
         stack.pop();
