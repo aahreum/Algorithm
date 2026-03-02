@@ -1,4 +1,4 @@
 function solution(num_list, n) {
-    const answer = num_list.indexOf(n) !== -1 ? 1 : 0;
+    const answer = num_list.includes(n) ? 1 : 0;
     return answer;
 }
