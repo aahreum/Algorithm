@@ -4,7 +4,7 @@ function solution(numlist, n) {
         const diffB = Math.abs(b - n);
 
         if (diffA === diffB) {
-        return b - a;
+            return b - a;
         }
 
         return diffA - diffB;
