@@ -1,10 +1,3 @@
 function solution(arr, k) {
-    const answer = arr.map((num) => {
-        if (k % 2 === 0) {
-            return num + k;
-        } else {
-            return num * k;
-        }
-    });
-    return answer;
+    return k % 2 === 0 ? arr.map((num) => num + k) : arr.map((num) => num * k);
 }
