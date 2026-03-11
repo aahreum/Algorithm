@@ -1,10 +1,8 @@
 function solution(names) {
-    const answer = [names[0]];
+    const answer = [];
     
-    for (let i = 1; i < names.length; i++) {
-        if (i % 5 === 0) {
-            answer.push(names[i]);
-        }
+    for (let i = 0; i < names.length; i+=5) {
+        answer.push(names[i]);
     }
     
     return answer;
