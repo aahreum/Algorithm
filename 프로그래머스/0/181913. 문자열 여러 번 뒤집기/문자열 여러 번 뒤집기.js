@@ -2,15 +2,12 @@ function solution(my_string, queries) {
     const answer = my_string.split('');
     
     for (query of queries) {
-        const [s, e] = query;
+        let [s, e] = query;
         
-        let left = s;
-        let right = e;
-        
-        while (left < right) {
-            [answer[left], answer[right]] = [answer[right], answer[left]];
-            left++;
-            right--;
+        while (s < e) {
+            [answer[s], answer[e]] = [answer[e], answer[s]];
+            s++;
+            e--;
         }
     }
     
