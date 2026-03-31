@@ -6,13 +6,14 @@ function bubbleSort(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
       // 오름차순
-      if (arr[j] < arr[j + 1]) {
+      if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
       }
     }
   }
+  return arr;
 }
 
 // 버블 정렬의 수행 시간 측정
@@ -24,7 +25,7 @@ bubbleSort(arr);
 let endTime = new Date().getTime();
 
 console.log(`버블 정렬 소요 시간: ${endTime - startTime}ms.`);
-
+console.log(bubbleSort(arr));
 // 이미 정렬된 배열에 대한 버블 정렬의 수행 시간 측정
 // 30000개의 원소가 7로
 arr = Array.from({ length: 30000 }, () => 7);
